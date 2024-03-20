@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
-import { LocalesProvider } from "@/components/locales-provider"
 import "./globals.css";
 
 // const inter = Inter({
@@ -31,10 +30,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  params: { locale },
   children,
 }: Readonly<{
-  params: { locale: string }; 
   children: React.ReactNode;
 }>) {
   return (
@@ -45,16 +42,14 @@ export default function RootLayout({
           roboto.className,
           "min-h-screen bg-background font-sans antialiased"
         )}>
-          <LocalesProvider locale={locale}>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {children}
-            </ThemeProvider>
-          </LocalesProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
       </body>
     </html>
   );

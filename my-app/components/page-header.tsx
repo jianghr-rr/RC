@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link'
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import {
@@ -8,7 +9,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {SwitchLocales} from '@/components/switch-locales'
 import { SunIcon, MoonIcon } from 'lucide-react';
 
 export default function PageHeader() {
@@ -19,7 +19,12 @@ export default function PageHeader() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            logo
+            <Link href="/#">logo</Link>
+            <div className='hidden md:flex md:gap-x-6'>
+              <Link href="/#features">Features</Link>
+              <Link href="/#testimonials">Testimonials</Link>
+              <Link href="/#pricing">Pricing</Link>
+            </div>
           </div>
           <div className="flex items-center gap-x-2 md:gap-x-5">
             <DropdownMenu>
@@ -43,8 +48,6 @@ export default function PageHeader() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            {/* 设置语言 */}
-            <SwitchLocales />
           </div>
         </nav>
       </div>
