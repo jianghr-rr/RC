@@ -2,8 +2,6 @@
  * @file 首页的第一个模块
  * @author jianghaoran01
  */
-
-import React from 'react'
 import Image from 'next/image';
 import { Button } from '@/components/ui/button'
 import { Video } from 'lucide-react'

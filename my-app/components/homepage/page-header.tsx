@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import HomePageHref from "@/components/homepage/page-href"
 import { SunIcon, MoonIcon } from 'lucide-react';
 
 export default function PageHeader() {
@@ -21,7 +22,7 @@ export default function PageHeader() {
           <div className="flex items-center md:gap-x-12">
             <Link href="/#">logo</Link>
             <div className='hidden md:flex md:gap-x-6'>
-              <Link href="/#features">Features</Link>
+              <HomePageHref.FeaturesHref />
               <Link href="/#testimonials">Testimonials</Link>
               <Link href="/#pricing">Pricing</Link>
             </div>
