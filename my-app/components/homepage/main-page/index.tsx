@@ -7,16 +7,19 @@ import React from 'react'
 import Image from 'next/image';
 import { Button } from '@/components/ui/button'
 import { Video } from 'lucide-react'
+import { lexend } from "@/app/fonts";
 
 const MainPage = () => {
 
     return (
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32'>
+        <div className={`${lexend.className} mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32`}>
             <h1 className='mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl'>
                 Accounting
+                <br className='block sm:block lg:hidden'/>
                 <span className='relative whitespace-nowrap text-blue-600'>
                     <span className='relative'>made simple</span>
                 </span>
+                <br/>
                 for small businesses.
             </h1>
             <p className='mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700'>

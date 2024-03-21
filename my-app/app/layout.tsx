@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local'
-import { cn } from "@/lib/utils"
+import { inter, lexend } from "@/app/fonts";
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
 
@@ -8,21 +7,6 @@ import "./globals.css";
 //   subsets: ["latin"],
 //   variable: "--font-sans",
 // });
-const roboto = localFont({
-  src: [
-    {
-      path: './fonts/NotoSansSC-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/NotoSansSC-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: "--font-sans",
-})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -35,13 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh" className="h-full scroll-smooth">
+    <html lang="zh" className={`h-full scroll-smooth ${inter.variable} ${inter.className} ${lexend.className} ${lexend.className}`}>
       <body
-        className={cn(
-          roboto.variable,
-          roboto.className,
-          "min-h-screen bg-background font-sans antialiased"
-        )}>
+        className="flex h-full flex-col">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
